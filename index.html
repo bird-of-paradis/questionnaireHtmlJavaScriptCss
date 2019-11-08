@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Super questionnaire</title>
+</head>
+<body>
+    <div class="main">
+        <h3>Le Super questionnaire</h3>
+        <hr>
+        <form action="">
+            <label for="nom">
+                Quel est votre nom ?
+                <input type="text" name="nom" id="nom">
+            </label>
+            <label for="datenaiss">
+                Quel est votre date de naissance ?
+                <input type="date" name="datenaiss" id="datenaiss">
+            </label>
+        </form>
+        <button id="validbtn">Valider</button>
+        <p id="resume"></p>
+    </div>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script>
+    $("#validbtn").click(function (e) {
+        e.preventDefault();
+        var nom = $("#nom").val();
+        var dt = $("#datenaiss").val();
+        var annee = dt.substring(0, 4);
+        var age = 2019 - parseInt(annee);
+        $("#resume").html(`Votre nom est ${nom} et vous avez ${age} ans.`)
+    })
+    </script>
+</body>
+</html>
